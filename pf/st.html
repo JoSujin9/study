@@ -14,6 +14,7 @@
     referrerpolicy="no-referrer"/>
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <title>study</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="wrap">
@@ -32,11 +33,34 @@
                     <div>
                         <ul class="icons">
                             <li><a href=""><img src="images/mypage.svg" alt="내정보"></a></li>
-                            <li><a href=""><img src="images/search.svg" alt="검색"></a></li>
+                            <li class="search_btn"><img src="images/search.svg" alt="검색"></li>
                          </ul>
                      </div>
             </div>
         </div>
+        <div class="dim"></div>
+        <div class="search_layer">
+            <!-- 가상선택자나 배경 -->
+            <!-- <label for="">이름</label> -->
+            <input type="text" class="search_input" placeholder="검색어를 입력해주세요">
+            <button>
+                <img src="images/search.svg" alt="검색">
+            </button>
+        </div>
+
     </div>
+    <script>
+        $(document).ready(function(){
+        $('.search_btn').click(function(){
+            $('.dim').fadeIn(200);
+            $('.search_layer').fadeIn(200);
+            });
+            $('.dim').click(function(){
+            $(this).fadeOut(200);
+            $('.search_layer').fadeOut(200);
+            });
+        });
+    </script>
+    
 </body>
 </html>
