@@ -4,9 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 파비콘 넣을때 -->
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link
+     <!-- 전체 초기화 -->
+     <link
+     rel="stylesheet"
+     href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+   
+   <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+     <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
@@ -24,11 +31,74 @@
                      LOGO
                 </div>
                     <ul class="nav">
-                        <li><a href="#">CATEGORY</a></li>
-                        <li><a href="#">CATEGORY</a></li>
-                        <li><a href="#">CATEGORY</a></li>
-                        <li><a href="#">CATEGORY</a></li>
-                       
+                        <li>
+                            <a href="#">CATEGORY</a>
+                            <ul>
+                                <li>
+                                    <a href="#">SUBCATEGORY</a>
+                                </li>
+                                <li>
+                                    <a href="#">SUBCATEGORY</a>
+                                </li>
+                                <li>
+                                    <a href="#">SUBCATEGORY</a>
+                                </li>
+                                <li>
+                                    <a href="#">SUBCATEGORY</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">CATEGORY</a>
+                            <ul>
+                                <li>
+                                    <a href="#">SUBCATEGORY</a>
+                                </li>
+                                <li>
+                                    <a href="#">SUBCATEGORY</a>
+                                </li>
+                                <li>
+                                    <a href="#">SUBCATEGORY</a>
+                                </li>
+                                <li>
+                                    <a href="#">SUBCATEGORY</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">CATEGORY</a>
+                            <ul>
+                                <li>
+                                    <a href="#">SUBCATEGORY</a>
+                                </li>
+                                <li>
+                                    <a href="#">SUBCATEGORY</a>
+                                </li>
+                                <li>
+                                    <a href="#">SUBCATEGORY</a>
+                                </li>
+                                <li>
+                                    <a href="#">SUBCATEGORY</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">CATEGORY</a>
+                            <ul>
+                                <li>
+                                    <a href="#">SUBCATEGORY</a>
+                                </li>
+                                <li>
+                                    <a href="#">SUBCATEGORY</a>
+                                </li>
+                                <li>
+                                    <a href="#">SUBCATEGORY</a>
+                                </li>
+                                <li>
+                                    <a href="#">SUBCATEGORY</a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                     <div>
                         <ul class="icons">
@@ -36,6 +106,63 @@
                             <li class="search_btn"><img src="images/search.svg" alt="검색"></li>
                          </ul>
                      </div>
+            </div>
+        </div>
+        <div class="contents">
+        <div class="main_swiper swiper">
+            <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="images/BG_01.png" alt="이미지1">
+                </div>
+                <div>
+                <img src="images/BG_02.png" alt="이미지2">
+            </div>
+            </div>
+        </div>
+        <!-- <div class="swiper-pagination"></div> -->
+        </div>
+        <div class="brand_box">
+            <div class="cont_tit">
+                3M 혁신 브랜드
+            </div>
+            <div class="brand_cont">
+                <div class="brand">PUMA</div>
+                <div class="brand">SAMSUNG</div>
+                <div class="brand">CONVERSE</div>
+                <div class="brand">APPLE</div>
+            </div>
+        </div>
+        <div class="cont_box">
+           <div class="cont_tit">
+            3M의 혁신
+            <span>실제로 우리의 생활 다양한 곳에 3M의 혁신이 적용되어 우리의 삶의 질을 향상 시킵니다.</span>
+        </div>
+           <div class="inv_cont_box">
+               <div class="inv_cont">
+               </div>
+               <div class="inv_cont">
+            </div>
+            <div class="inv_cont">
+            </div>
+           </div>
+        </div> 
+        <div class="cont_box">
+            <div class="cont_tit">
+                3M의 소개
+                <span>3M은 다양한 산업에 진출하여 혁신을 통해 모든 인류의 삶을 개선시키기 위한 기업입니다.
+                </span>
+            </div>
+            <div class="intro_cont_box">
+                <div class="intro_img_box">
+                     <img src="images/intro_img.png" alt="그림">
+                </div>
+                <div class="intro_text_box"></div>
+            </div>
+        </div>
+    </div>
+        <div class="footer">
+            <div class="footer_text">
+                수고하셨습니다.
             </div>
         </div>
         <div class="dim"></div>
@@ -59,8 +186,29 @@
             $(this).fadeOut(200);
             $('.search_layer').fadeOut(200);
             });
+
+            $('.nav > li').mouseenter(function(){
+                $('.nav > li > ul').stop().slideUp(300);
+                $(this).find('ul').stop().slideDown(300);
+             });
+             $('.header').mouseleave(function(){
+            $('.nav > li > ul').stop().slideUp(300);
+             });
+             
         });
+
     </script>
-    
+    <script type="module">
+        import Swiper from 'https://unpkg.com/swiper@8/swiper-bundle.esm.browser.min.js'
+        const swiper = new Swiper('.swiper', {
+        //     pagination: {
+        //   el: ".swiper-pagination",
+        // },
+            autoplay: {
+                delay: 3000,
+            },
+            loop: true
+        })
+      </script>
 </body>
 </html>
