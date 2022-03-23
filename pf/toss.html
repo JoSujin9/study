@@ -44,14 +44,32 @@
                 </ul>
             </div>
         </div>
-        <div>
-            <ul>
-                <li>ffff</li>
-                
-                <img src="images/mockup.png" alt="">
-                <img src="images/mockup.png" alt="">
-                <img src="images/mockup.png" alt="">
-            </ul>
+        <div class="section home">
+            <div class="inner">
+            <div class="title_box">
+                <p class="title">
+                    <span>홈 · 소비</span>
+                    내 돈 관리,<br>
+                    지출부터 일정까지<br>
+                    똑똑하게
+                </p>
+            </div>
+            <div class="home_img_01">
+                <img src="/images/mockup.png" alt="예시이미지" />
+                <img src="/images/home_img1.png" alt="예시이미지" />
+            </div>
+            <div class="home_img_02">
+                <img src="/images/mockup.png" alt="예시이미지" />
+                <img src="/images/home_img2.png" alt="예시이미지" />
+            </div>
+            <div class="script_box">
+                <p class="script">
+                    토스에 계좌와 카드를 연결해 보세요.<br>
+                    계좌 잔액, 대출·투자 내역은 기본,<br>
+                    일자별 소비와 수입까지 한 번에 볼 수 있어요.
+                </p>
+            </div>
+            </div>
         </div>
     </div>
     <script>
@@ -63,12 +81,40 @@
             $(window).scroll(function(){
                 if($(window).scrollTop() >= 1){
                     $('body').addClass('scrolled');
-            } else{
-                $('body').removeClass('scrolled');
+            }   else{
+                     $('body').removeClass('scrolled');
             }
-
             });   
+            //     $('.home .title_box').addClass('on');
+            // setTimeout(function(){
+            //     $('.home .home_img_01').addClass('on');
+            // },500);
+            //  setTimeout(function(){
+            //     $('.home .home_img_02').addClass('on');
+            //  },1000);
+            //  setTimeout(function(){
+            // $('.home .script_box').addClass('on');
+            // },1500);
+                       
         });
+
+            $(function(){
+                var idx = 0;
+                setInterval(time, 500);
+                function time(){
+                    var box = $('.home > div > div');
+                    box.eq(idx).removeClass('on');
+                    box.eq(idx).addClass('on');
+                    idx++;
+                    if(idx >= box.length){
+                        return;
+                    }
+                }
+               
+            });
+
+
+
     </script>
 </body>
 </html>
