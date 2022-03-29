@@ -71,6 +71,44 @@
             </div>
             </div>
         </div>
+        <div class="section invest">
+            <div class="inner">
+            <div class="title_box">
+                <p class="title">
+                    <span>투자</span>
+                    투자,<br>
+                    모두가 할 수 있도록
+                  </p>
+                 </div>
+                 <div class="inv_img_box">
+                        <img src="/images/mockup.png" alt="목업이미지">
+                       <div class="inv_imgs">
+                           <div class="inv_imgs_wrap">
+                               <img src="/images/stock_img2.png" alt="투자이미지1">
+                               <img src="/images/stock_img3.png" alt="투자이미지2">
+                               <img src="/images/stock_img4.png" alt="투자이미지3">
+                               <img src="/images/stock_img5.png" alt="투자이미지4">
+                               <img src="/images/stock_img6.png" alt="투자이미지5">
+                               <img src="/images/stock_img7.png" alt="투자이미지6">
+                               <img src="/images/stock_img8.png" alt="투자이미지7">
+                           </div>
+                       </div>
+                        <img src="/images/stock_img1.png" alt="예시이미지" />
+                 </div>
+                 <div class="inv_text_box">
+                     <p>
+                        이해하기 쉬운 용어<br>
+                        설명이 필요 없는<br>
+                        직관적인 화면 구성
+                     </p>
+                     <p>
+                        송금처럼 쉬운 구매 경험<br>
+                        그리고 투자 판단에<br>
+                        도움을 주는 콘텐츠까지
+                     </p>
+                 </div>
+            </div>
+        </div> 
     </div>
     <script>
         $(document).ready(function(){
@@ -99,10 +137,10 @@
         });
 
             $(function(){
-                var idx = 0;
+                let idx = 0;
                 setInterval(time, 500);
                 function time(){
-                    var box = $('.home > div > div');
+                    let box = $('.home > div > div');
                     box.eq(idx).removeClass('on');
                     box.eq(idx).addClass('on');
                     idx++;
@@ -110,11 +148,32 @@
                         return;
                     }
                 }
-               
+               clearInterval(idx);
+            //    console.log('어쩌라고');
             });
+            // $(function(){
+            //     let idx = 0;
+            //     let myInterval
+            //     const timer = setInterval(function(){
+            //         timer();
+            //     });
+            // });
 
-
-
+            $(window).scroll(function(){
+                let offset = $(document).scrollTop()
+            ,offset2 = offset - 2093
+            ,opacity=0
+            ,fadeStart=2093
+            ,fadeUntil=2493
+            ,fadeChange= fadeUntil - fadeStart
+            ,fading = $('.inv_imgs_wrap img')
+            if( offset >= fadeStart ){
+                opacity= offset2/fadeChange;
+            }else {
+                opacity= 0;
+            }
+            fading.css('opacity',opacity);
+            });
     </script>
 </body>
 </html>
